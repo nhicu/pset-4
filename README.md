@@ -72,7 +72,7 @@ Your code needs to support all integers in the range [`1`, `Number.MAX_SAFE_INTE
 
 Prompt the user to enter a positive integer. Without using any `String` methods, compute the sum of all of the odd digits in the integer.
 
-Your code needs to support all integers in the range [`Number.MIN_SAFE_INTEGER`, `Number.MAX_SAFE_INTEGER`]. Integers outside of this range, numbers with decimal components, and non-numeric values are invalid. Continuously prompt the user until you receive a valid integer.
+Your code needs to support all integers in the range [`1`, `Number.MAX_SAFE_INTEGER`]. Integers outside of this range, numbers with decimal components, and non-numeric values are invalid. Continuously prompt the user until you receive a valid integer.
 
 ![Exercise 3 Output](https://github.com/ap-principles-ucvts/pset-4-skeleton/blob/master/images/odd.png)
 
@@ -84,7 +84,13 @@ Your code needs to support all integers in the range [`Number.MIN_SAFE_INTEGER`,
 
 Prompt the user to enter a series of non-negative integers. When the user enters a negative integer, you can assume he or she is done entering values. Discounting the negative integer, what is the average of the values entered?
 
-Your code needs to support all numbers in the range [`0`, `Number.MAX_SAFE_INTEGER`], and should reject anything not in this range. Continuously prompt the user until you receive a value in the supported range (meaning invalid values should be ignored entirely).
+Your code needs to support all integers in the range [`0`, `Number.MAX_SAFE_INTEGER`], and should reject anything not in this range. Continuously prompt the user until you receive a value in the supported range (meaning invalid values should be ignored entirely).
+
+There are a couple corner cases you'll need to handle.
+* A user enters an invalid number that exceeds `Number.MAX_SAFE_INTEGER` after already entering a valid number.
+* A user enters a negative number before entering a valid number.
+
+In both cases, your code should ignore the invalid number and continue prompting the user. As a general rule of thumb, the user must enter at least one valid number before your code outputs the average.
 
 ![Exercise 4 Output](https://github.com/ap-principles-ucvts/pset-4-skeleton/blob/master/images/average.png)
 

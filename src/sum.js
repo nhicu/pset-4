@@ -26,4 +26,4 @@ for (let i = lowerb; i <= upperb; i++) {
     sum = (sum + i);
     }
 }
-  console.log(`\n${sum.toLocaleString()}.`);
+  console.log(`\n${sum.toLocaleString()}.\n`);

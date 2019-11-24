@@ -6,12 +6,14 @@ let total = 0;
 let value = 0;
 
 console.log("\n")
-while (Number.isNaN(value) ||!Number.isInteger(value) || (value >= MIN && value < MAX) || !Number.isSafeInteger(value)){
+while (Number.isNaN(value) ||!Number.isInteger(value) || value < MIN || value < MAX || !Number.isSafeInteger(value)){
          value = Number(readlineSync.question("Non-negative integer: "));
-
+}
 for (let i = 2; i <value; i++) {
   if (value% i == 0) {
     total = false;
+  } else {
+    total = true;
   }
 }
 if (total) {

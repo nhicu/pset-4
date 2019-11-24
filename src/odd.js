@@ -5,10 +5,7 @@ const MAX = Number.MAX_SAFE_INTEGER;
 
 
 let value = Number(readlineSync.question("\nPositive integer: "));
-while (Number.isNaN(value) ||
-         !Number.isInteger(value) ||
-         value < 1 ||
-         !Number.isSafeInteger(value)) {
+while (Number.isNaN(value) || !Number.isInteger(value) || value < 1 || !Number.isSafeInteger(value)) {
          value = Number(readlineSync.question("Positive integer: "));
        }
 let total = 0;

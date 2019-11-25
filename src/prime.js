@@ -4,7 +4,6 @@ const MIN = 0;
 const MAX = Number.MAX_SAFE_INTEGER;
 let total = 0;
 
-console.log("\n")
 let value = Number(readlineSync.question("\nNon-negative integer: "));
 while (Number.isNaN(value) ||!Number.isInteger(value) || value < MIN || value > MAX || !Number.isSafeInteger(value)){
          value = Number(readlineSync.question("Non-negative integer: "));

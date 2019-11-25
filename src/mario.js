@@ -5,7 +5,6 @@ const Max = 24;
 let row;
 
 let value = Number(readlineSync.question("\nHeight: "));
-
 while ((value < Min) || (value > Max) || Number.isNaN(value) || (!Number.isInteger(value)) ||  !Number.isSafeInteger(value)) {
   value = Number(readlineSync.question("Height: "));
 }

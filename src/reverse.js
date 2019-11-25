@@ -2,9 +2,8 @@ const readlineSync = require("readline-sync");
 
 const MIN = 1;
 const MAX = Number.MAX_SAFE_INTEGER;
-
-
 let digit = "";
+
 let value = Number(readlineSync.question("\nPositive integer: "));
 while (Number.isNaN(value) ||
          !Number.isInteger(value) ||

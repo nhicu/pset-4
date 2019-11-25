@@ -1,48 +1,52 @@
 const readlineSync = require("readline-sync");
 
-let x = 1;
-let c = 0;
-let a = 0;
 const MIN = 1000000000000;
 const MAX = 9999999999999999;
-let c2;
-let s = 0;
-let d1 = 0;
-let d2 = 0;
-let sid = 0;
-let d = 0;
+let x = 1;
+let crednum = 0;
+let add= 0;
+let crednum2;
+let sum = 0;
+let first = 0;
+let second = 0;
+let one = 0;
+let digit = 0;
 
-console.log();
+console.log("\n");
 do {
-  c = Number(readlineSync.question("Number: "));
-} while (c < MIN || c > MAX || Number.isNaN(c) || !Number.isInteger(c))
-ct = c;
-while (ct >= 1) {
-  ct = ct / 10;
-  d = d + 1;
-}
-d1 = Math.floor(c / 10 ** (d - 1));
-d2 = (Math.floor(c / 10 ** (d - 2)) / 10) * 10;
+  crednum = Number(readlineSync.question("Number: "));
+} while (crednum < MIN || crednum > MAX || Number.isNaN(crednum) || !Number.isInteger(crednum) || !Number.isSafeInteger(crednum))
 
-for (let l = 0; l < d; l++) {
-  sid = (c - Math.floor(c / 10) * 10);
-  c = Math.floor(c / 10);
-  if (l % 2 == 1) {
-    if (sid * 2 >= 10) {
-      a = a + ((sid * 2 - sid * 2 % 10) / 10 + sid * 2 % 10);
-    } else if (sid * 2 < 10) {
-      a = a + sid * 2;
+crednum2 = crednum;
+
+while (crednum2 >= 1) {
+  crednum2 = crednum2 / 10;
+  digit = digit + 1;
+}
+first = Math.floor(crednum / 10 ** (digit - 1));
+second = (Math.floor(crednum / 10 ** (digit - 2)) / 10) * 10;
+
+for (let loop = 0; loop < digit; loop++) {
+  one = (crednum - Math.floor(crednum / 10) * 10);
+  crednum = Math.floor(crednum / 10);
+  if (loop % 2 == 1) {
+    if (one * 2 >= 10) {
+      add = add + ((one * 2 - one * 2 % 10) / 10 + one * 2 % 10);
+    } else if (one * 2 < 10) {
+      add = add + one * 2;
     }
   } else {
-    a = a + sid;
+    add = add + one;
   }
   ++x;
 }
-if (a / 10 % 1 != 0) {
+
+if (add / 10 % 1 != 0) {
   console.log("\nInvalid.\n")
-} else if (d == 15 && (d2 == 34 || d2 == 37)) {
+} else if (digit == 15 && (second == 34 || second == 37)) {
   console.log("\nAmex.\n")
-} else if (d == 16 && (d2 <= 55 && d2 >= 51)) {
+} else if (digit == 16 && (second <= 55 && second >= 51)) {
   console.log("\nMastercard.\n")
-} else if ((d == 13 || d == 16) && d1 == 4) {
+} else if ((digit == 13 || digit == 16) && first == 4) {
   console.log("\nVisa.\n")
+}

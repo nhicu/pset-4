@@ -8,7 +8,6 @@ var fib = 1;
 var numero = 0;
 
 let value = Number(readlineSync.question("\nPositive integer: "));
-
 while (Number.isNaN(value) ||!Number.isInteger(value) || value < MIN || value > MAX || !Number.isSafeInteger(value)){
          value = Number(readlineSync.question("Positive integer: "));
 }

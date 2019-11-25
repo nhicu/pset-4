@@ -3,9 +3,10 @@ const readlineSync = require("readline-sync");
 const MIN = 1;
 const MAX = 78;
 
-let firstnumber = 0;
-let fib = 1;
-let numero;
+var firstnumber = 0;
+var fib = 1;
+var numero = 0;
+
 let value = Number(readlineSync.question("\nPositive integer: "));
 
 while (Number.isNaN(value) ||!Number.isInteger(value) || value < MIN || value > MAX || !Number.isSafeInteger(value)){
@@ -13,8 +14,8 @@ while (Number.isNaN(value) ||!Number.isInteger(value) || value < MIN || value > 
 }
 
 for (i = 2; i<=value ; i++){
-  numero = firstnumber + fib;
-  let firstnumber = fib;
-  let fib = numero;
+  var numero = firstnumber + fib;
+  var firstnumber = fib;
+  var fib = numero;
 }
-console.log("\n" +numero.toLocaleString("en")+".\n")
+console.log("\n" +fib.toLocaleString("en")+".\n")
